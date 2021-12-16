@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- style css -->
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      fieldset {
+        width: 25%;
+      }
+    </style>
+    <!-- akhir style css -->
+
+    <!-- script js -->
+    <script>
+      function kurs(){
+        let nilai = Number(document.getElementById("dari").value);
+        let pilihan = document.getElementById("matauang").value;
+        let usd = Number("9915");
+        let upor = Number("13472");
+        let mly = Number("874");
+        let jpn = Number("120");
+        let eur = Number("15888");
+        let riy = Number("3592");
+        if (isNaN(nilai)){
+          alert("Isilah dengan angka!");
+        }
+        else{
+          if (pilihan == "dollar"){
+            hasil = nilai * usd;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "dollarpore"){
+            hasil = nilai * upor;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "mly"){
+            hasil = nilai * mly;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "mly"){
+            hasil = nilai * mly;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "yenj"){
+            hasil = nilai * jpn;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "euro"){
+            hasil = nilai * eur;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+          if (pilihan == "riyal"){
+            hasil = nilai * riy;
+            document.getElementById("hasil").innerHTML = hasil;
+          }
+        }
+      }
+    </script>
+    <!-- akhir script js -->
+    <title>Tugas 1 kurs mata Uang Asing</title>
+  </head>
+  <body>
+    <h2>KURS MATA UANG ASING KE RUPIAH</h2>
+    <fieldset>
+      <legend>Rupiah - Mata Uang Asing</legend>
+      <table>
+        <tr>
+          <th>Masukan Nilai</th>
+          <th>Valas</th>
+          <th>Nilai Rupiah</th>
+        </tr>
+        <tr>
+          <td><input type="text" id="dari" value="" onchange="kurs()"/></td>
+          <td>
+            <select id="matauang" onchange="kurs()">
+              <option value="dollar" id="dollar">Dollar US</option>
+              <option value="dollarpore" id="dollarpore">Dollar Singapore</option>
+              <option value="mly" id="mly">Ringgit Malaysia</option>
+              <option value="yenj" id="yenj">Yen Jepan</option>
+              <option value="euro" id="euro">Euro</option>
+              <option value="rial" id="riyal">Rial Arab Saudi</option>
+            </select>
+          </td>
+          <td id="hasil"></td>
+        </tr>
+      </table>
+    </fieldset>
+  </body>
+</html>
